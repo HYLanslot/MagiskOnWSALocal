@@ -122,10 +122,10 @@ if [ -n "${NEED_INSTALL[*]}" ]; then
 fi
 pip list --disable-pip-version-check | grep -E "^requests " >/dev/null 2>&1 || python3 -m pip install requests
 
-winetricks list-installed | grep -E "^msxml6" >/dev/null 2>&1 || {
-    cp -r ../wine/.cache/* ~/.cache
-    winetricks msxml6 || abort
-}
+#winetricks list-installed | grep -E "^msxml6" >/dev/null 2>&1 || {
+#    cp -r ../wine/.cache/* ~/.cache
+#    winetricks msxml6 || abort
+#}
 WHIPTAIL=$(command -v whiptail 2>/dev/null)
 DIALOG=$(command -v dialog 2>/dev/null)
 DIALOG=${WHIPTAIL:-$DIALOG}
